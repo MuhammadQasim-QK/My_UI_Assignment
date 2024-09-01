@@ -30,7 +30,13 @@
   flex-direction: column;
   gap: 48px;
 }
-
+ul{
+    list-style-type: none; 
+    padding: 0;
+    margin: 0; 
+    display: flex; 
+    align-items: center;
+}
 /*List syle and achor tag style adjustmnet*/
 li{
   list-style: none;
