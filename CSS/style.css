@@ -975,7 +975,7 @@ border-bottom: 1px solid red;
   .image{
     object-fit: contain;
         width: 450px;
-    height: 1005;
+    height: 1005px;
   }
 
   
@@ -1061,7 +1061,7 @@ flex: 0 1 30%;
     gap: 15px;
   }
 }
-@media screen and (max-width=910px) {
+@media screen and (max-width : 910px) {
 
   .Upper_element{
   width: 100%;
