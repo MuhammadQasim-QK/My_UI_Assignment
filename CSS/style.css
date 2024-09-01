@@ -3,6 +3,28 @@
   padding: 0;
   scroll-behavior: smooth;
 }
+#scrollTopButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #007BFF; /* Blue color */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 24px;
+  display: none; /* Hidden by default */
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Ensure it's on top of other elements */
+}
+
+#scrollTopButton:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
 /*Section 1*/
 .Section_1{
   display: flex;
