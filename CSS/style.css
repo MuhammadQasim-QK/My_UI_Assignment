@@ -35,8 +35,9 @@ ul{
     padding: 0;
     margin: 0; 
     display: flex; 
-    gap:7px;
     align-items: center;
+    gap: 10px;
+
 }
 /*List syle and achor tag style adjustmnet*/
 li{
@@ -818,7 +819,7 @@ border-bottom: 1px solid red;
 
 /*--------------Some fIXES8*-------*/
 .our_p_block{
-  width: 115px;
+  width: 110px;
 }
 .Sub_nav_container{
   display: flex;
