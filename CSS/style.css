@@ -794,7 +794,7 @@ border: 1.5px solid white;
 }
 .social_icon:hover,.social_icon2:hover{
   border-radius: 20px;
-  border-color: 1px solid red;
+  border: 1px solid red;
 }
 .social_icon2{
   visibility: hidden;
