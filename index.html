@@ -9,7 +9,7 @@
   <title>UI TASK</title>
 </head>
 <header>
-  <section class="Section_1">
+  <section class="Section_1" id ="section1">
     <!--Nav Bar Container Desktop-->
       <!------------------------------------------>
       <div class="nav_bar_main_container">
@@ -84,7 +84,7 @@
 </header>
 <!------------------------------------------------------------------------------------->
 <!---------------------------------Section 2----Feature-------------------------------->
-<section class="Section_2">
+<section class="Section_2" id ="section2">
   <!-----------------------Heading_container------------------------------------------->
   <div class="Section2_heading">
     <div class="upper_Heading">
@@ -214,8 +214,8 @@
 
 <!------------------------------------------------------------------------------------->
 <!---------------------------------Section3----Image-------------------------------->
-<section class="Section_3">
 <!-----------------------Heading_container------------------------------------------->
+<section class="Section_3" id = "section3" >
   <div class="Section2_heading">
     <div class="upper_Heading">
       <div><strong>Redefining Product Features</strong></div>
@@ -247,7 +247,7 @@
 </div>
 </section>
 <!---------------------------------Section4----Image-------------------------------->
-<section class="Section_4">
+<section class="Section_4" id = "section4">
 
   <!-----------------------Image_Container------------------------------------------->
   <div class="main_conten1">
@@ -275,7 +275,7 @@
   </section>
 <!------------------------------------------------------------------------------------->
 <!---------------------------------Section5----Image-------------------------------->
-<section class="Section_5">
+<section class="Section_5"  id = "section5">
   <!-----------------------Image_Container------------------------------------------->
   <div class="main_conten1">
     <div class="Image_Block">
@@ -315,7 +315,7 @@
   </section>
 <!------------------------------------------------------------------------------------->
 <!---------------------------------Section6----review-------------------------------->
-<section class="Section_2">
+<section class="Section_2"  id = "section6">
   <!-----------------------Heading_container------------------------------------------->
   <div class="Section2_heading">
     <div class="upper_Heading">
@@ -426,7 +426,7 @@
 </section>
   <!------------------------------------------------------------------------------------->
 <!---------------------------------Section7----Testimonals-------------------------------->
-<section class="Section_2">
+<section class="Section_2"  id = "section7">
   <!-----------------------Heading_container------------------------------------------->
   <div class="Section2_heading">
     <div class="upper_Heading">
@@ -488,7 +488,7 @@
   <!------------------------------------------------------------------------------------->
 <!---------------------------------Section8----SUbmit button-------------------------------->
 
-<section class="Section_2">
+<section class="Section_2"  id = "section8">
   <div class="main_conten">
     <div class="Section_8">
       <div class="left_portion">
@@ -604,5 +604,48 @@
 <!------------------------------Footer Ended----------------------------------->
 
 <!------------------------------Footer Ended----------------------------------->
+<script>
+  document.addEventListener("wheel", function(event) {
+    // Prevent the default scroll behavior
+    event.preventDefault();
+
+    // Get all the sections
+    const sections = document.querySelectorAll("div[id^='section']");
+    let currentSectionIndex = -1;
+
+    // Find the current section in view
+    for (let i = 0; i < sections.length; i++) {
+        const section = sections[i];
+        const sectionTop = section.getBoundingClientRect().top;
+
+        if (sectionTop >= 0 && sectionTop < window.innerHeight / 2) {
+            currentSectionIndex = i;
+            break;
+        }
+    }
+
+    if (currentSectionIndex === -1) {
+        return; // If no section found, exit
+    }
+
+    // Determine the scroll direction
+    if (event.deltaY > 0) {
+        // Scroll down
+        if (currentSectionIndex < sections.length - 1) {
+            sections[currentSectionIndex + 1].scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    } else {
+        // Scroll up
+        if (currentSectionIndex > 0) {
+            sections[currentSectionIndex - 1].scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    }
+}, { passive: false });
+
+</script>
 </body>
 </html>
