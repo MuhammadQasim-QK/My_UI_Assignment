@@ -9,6 +9,8 @@
   <title>UI TASK</title>
 </head>
 <header>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
   <section class="Section_1" id ="section1">
     <!--Nav Bar Container Desktop-->
       <!------------------------------------------>
@@ -506,7 +508,6 @@
   
 </section>
   <!------------------------------------------------------------------------------------->
-  <button id="scrollTopButton" style="display:none;">&#8679;</button>
 
 <!---------------------------------Section9----Footer-------------------------------->
 <footer>
@@ -607,29 +608,25 @@
 
 <!------------------------------Footer Ended----------------------------------->
 <script>
-  // Get references to the button and section2
-const scrollTopButton = document.getElementById("scrollTopButton");
-const section2 = document.getElementById("section2");
+  // Get the button:
+let mybutton = document.getElementById("myBtn");
 
-// Show the button when scrolling past section2
-window.addEventListener("scroll", function() {
-    const section2Top = section2.getBoundingClientRect().top;
-    
-    if (section2Top <= window.innerHeight) {
-        scrollTopButton.style.display = "flex"; // Show the button
-    } else {
-        scrollTopButton.style.display = "none"; // Hide the button
-    }
-});
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
 
-// Scroll to the top when the button is clicked
-scrollTopButton.addEventListener("click", function() {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-});
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
 
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
 </script>
 </body>
 </html>
